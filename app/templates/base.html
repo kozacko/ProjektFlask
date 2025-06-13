@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projekt Flask</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+    <header>
+        <h1>Analiza danych</h1>
+        {% if current_user.is_authenticated %}
+        <p>Zalogowany jako {{ current_user.username }} | <a href="{{ url_for('main.logout') }}">Wyloguj</a></p>
+        {% endif %}
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
