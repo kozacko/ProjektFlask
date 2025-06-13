@@ -3,4 +3,11 @@
 <h2>Witaj, {{ name }}!</h2>
 <p>Poniżej znajduje się analiza danych:</p>
 <img src="{{ url_for('static', filename='plot.png') }}" alt="Wykres analizy">
+<div class="card">
+  <h3>Liczba ludności w Polsce (2015–2020)</h3>
+  <img src="{{ url_for('static', filename='forecast.png') }}" alt="Wykres ludności" style="max-width:100%;">
+</div>
 {% endblock %}
+
+
+

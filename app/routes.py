@@ -4,7 +4,7 @@ from .models import User
 from . import db
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
-from .analysis import generate_analysis_plot
+from .analysis import generate_analysis_plot, generate_forecast_plot
 from flask_login import LoginManager
 
 main = Blueprint('main', __name__)
@@ -44,6 +44,7 @@ def login():
 @login_required
 def dashboard():
     generate_analysis_plot()
+    generate_forecast_plot()
     return render_template('dashboard.html', name=current_user.username)
 
 @main.route('/logout')
